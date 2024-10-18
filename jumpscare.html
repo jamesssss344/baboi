@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumpscare</title>
+    <link rel="stylesheet" href="jumpscare.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <h1>Click the button if you're not racist</h1>
+    <button id="startBtn">Start</button>
+
+    <div id="scary-message"></div>
+    <img id="jumpscare-image" src="images/fnaf.jpg" alt="Scary Image">
+    <audio id="jumpscare-sound" src="sound/five-nights-at-freddys-full-scream-sound_2.mp3"></audio>
+
+    <script>
+        const startBtn = document.getElementById('startBtn');
+        const jumpscareImage = document.getElementById('jumpscare-image');
+        const jumpscareSound = document.getElementById('jumpscare-sound');
+        const scaryMessage = document.getElementById('scary-message');
+
+        startBtn.addEventListener('click', function() {
+            scaryMessage.innerHTML = "Something gift is coming...";
+            setTimeout(() => {
+                jumpscareImage.style.display = 'block';
+                jumpscareSound.play();
+                scaryMessage.innerHTML = "";
+            }, 5000); // Delay for 5 seconds before jumpscare
+        });
+    </script>
+
+</body>
+</html>
